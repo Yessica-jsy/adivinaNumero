@@ -1,72 +1,78 @@
-let secretNumber = 0;
-let attempt = 1;
-let maxAttempts = 3;
+let secretNumber = 0; // Number the user has to guess
+let attempt = 1; // User's attempt counter
+let maxAttempts = 3; // Maximum number of allowed attempts
 
+// Assigns text to an HTML element
 function assignText(element, text) {
-    let elementHtml = document.querySelector(element);
-    elementHtml.innerHTML = text;
+    let elementHtml = document.querySelector(element); // Select the HTML element
+    elementHtml.innerHTML = text; // Assign the text to the element
 }
 
-function generaterNumber() {
-    let number = Math.floor(Math.random() * 10) + 1;
-    return number;
+// Generates a random number between 1 and 10
+function generateNumber() {
+    let number = Math.floor(Math.random() * 10) + 1; // Generate the random number
+    return number; // Return the generated number
 }
 
+// Initializes the game
 function initialize() {
-    assignText('h1', 'Adivina el Número');
-    assignText('p', 'Elige un número del 1 al 10');
-    secretNumber = generaterNumber();
-    console.log(secretNumber, 'número secreto');
-    attempt = 1;
-    document.getElementById('restart').setAttribute('disabled', 'true');
-    document.getElementById('attempt').removeAttribute('disabled');
-    document.getElementById('userNumber').removeAttribute('disabled');
-    img('img/what.png');
+    assignText('h1', 'Guess the Number'); // Set the game title
+    assignText('p', 'Pick a number from 1 to 10'); // Set the game instructions
+    secretNumber = generateNumber(); // Generate the secret number
+    console.log(secretNumber, 'secret number'); // Log the secret number (for testing)
+    attempt = 1; // Reset the attempt counter
+    document.getElementById('restart').setAttribute('disabled', 'true'); // Disable the restart button
+    document.getElementById('attempt').removeAttribute('disabled'); // Enable the attempt button
+    document.getElementById('userNumber').removeAttribute('disabled'); // Enable the number input field
+    changeImage('img/what.png'); // Change the image to a default image
 }
 
+// Verifies the number entered by the user
 function verifyNumber() {
-    let userNumber = parseInt(document.getElementById('userNumber').value); // Obtiene el valor del número ingresado por el usuario
-    console.log(attempt, 'intentos'); // Muestra en consola el número de intentos
+    let userNumber = parseInt(document.getElementById('userNumber').value); // Get the number entered by the user
+    console.log(attempt, 'attempts'); // Log the number of attempts
 
-    // Compara el número ingresado por el usuario con el número secreto
+    // Compare the number entered by the user with the secret number
     if (secretNumber === userNumber) {
-        assignText('p', `Acertaste el número en ${attempt} ${(attempt === 1) ? 'intento' : 'intentos'}`); // Mensaje de acierto
-        document.getElementById('restart').removeAttribute('disabled'); // Habilita el botón de reinicio
-        noAttmepts();
-        img('img/good.png')
+        assignText('p', `You guessed the number in ${attempt} ${attempt === 1 ? 'attempt' : 'attempts'}`); // Success message
+        document.getElementById('restart').removeAttribute('disabled'); // Enable the restart button
+        disableInputs(); // Disable inputs and buttons
+        changeImage('img/good.png'); // Change the image to a success image
     } else {
         if (secretNumber > userNumber) {
-            assignText('p', 'El número secreto es mayor'); // Mensaje si el número secreto es mayor
+            assignText('p', 'The secret number is higher'); // Message if the secret number is higher
         } else if (secretNumber < userNumber) {
-            assignText('p', 'El número secreto es menor'); // Mensaje si el número secreto es menor
+            assignText('p', 'The secret number is lower'); // Message if the secret number is lower
         }
-        attempt++; // Incrementa el contador de intentos
-        document.querySelector('input').value = '';
+        attempt++; // Increment the attempt counter
+        document.querySelector('input').value = ''; // Clear the user input
         if (attempt > maxAttempts) {
-            assignText('p', 'Alcanzaste el número máximo de intentos');
-            document.getElementById('restart').removeAttribute('disabled'); // Habilita el botón de reinicio
-            noAttmepts()
-            img('img/cry.png');
+            assignText('p', 'You reached the maximum number of attempts'); // Message for reaching the maximum attempts
+            document.getElementById('restart').removeAttribute('disabled'); // Enable the restart button
+            disableInputs(); // Disable inputs and buttons
+            changeImage('img/cry.png'); // Change the image to a failure image
         }
         return;
     }
 }
-//no mas intentos
-function noAttmepts(){
-    document.getElementById('attempt').setAttribute('disabled','true');
-    document.getElementById('userNumber').setAttribute('disabled', 'true');
-    clearBox();
+
+// Disables inputs and buttons when no more attempts are allowed
+function disableInputs(){
+    document.getElementById('attempt').setAttribute('disabled','true'); // Disable the attempt button
+    document.getElementById('userNumber').setAttribute('disabled', 'true'); // Disable the number input field
+    clearInput(); // Clear the input field
     return;
 }
-// cambio de imagen
-function img(paint){
-    
-    let myPicture = document.getElementById('picture');
-    myPicture.src = paint;
-}
-//  limpiar caja 
-function clearBox(){
-    document.querySelector('input').value = '';
+
+// Changes the displayed image
+function changeImage(src){
+    let myPicture = document.getElementById('picture'); // Select the image element
+    myPicture.src = src; // Change the image source
 }
 
-initialize();
+// Clears the input field
+function clearInput(){
+    document.querySelector('input').value = ''; // Clear the user input
+}
+
+initialize(); // Initialize the game on page load
