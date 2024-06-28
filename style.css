@@ -1,79 +1,110 @@
-/* Estilo para el body */
+/* Estilos globales del body */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: rgb(202, 226, 95); /* Fondo azul para todo el body */
-    font-family: Arial, sans-serif;
-  }
+  margin: 0; /* Elimina el margen por defecto del body */
+  padding: 0; /* Elimina el padding por defecto del body */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  height: 90vh; /* Alto del body, utiliza el 90% del viewport height */
+  background-color: rgb(202, 226, 95); /* Color de fondo para todo el body */
+  font-family: Arial, sans-serif; /* Fuente y tipo de letra */
+}
+
+/* Estilos para el contenedor principal */
+#centered-box {
+  max-width: 1000px; /* Ancho máximo del contenedor */
+  min-width: 400px; /* Ancho mínimo del contenedor */
+  width: 80%; /* Ancho del contenedor, dejando un margen del 10% a los lados */
+  padding: 20px; /* Espaciado interno del contenedor */
+  background-image: url(img/Ruido.png); /* Imagen de fondo del contenedor */
+  background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
+  border: 1px solid #ccc; /* Borde del contenedor */
+  border-radius: 22px; /* Borde redondeado del contenedor */
+  margin: 5% auto; /* Márgenes del 5% desde arriba y abajo, centrado horizontalmente */
+  display: flex;
+  flex-direction: row; /* Orientación de los elementos en pantallas grandes */
+  align-items: center; /* Centra horizontalmente los elementos */
+  justify-content: space-around; /* Espaciado uniforme horizontal entre elementos */
+}
+
+/* Estilos para la imagen dentro del contenedor */
+.imagen {
+  max-width: 600px; /* Ancho máximo de la imagen */
+  min-width: 40px; /* Ancho mínimo de la imagen */
+  min-height: 50px; /* Alto mínimo de la imagen */
+  height: 50%; /* Alto de la imagen */
+  width: 50%; /* Ancho de la imagen */
+  align-self: center; /* Centra la imagen dentro del contenedor */
+}
+
+/* Estilos para el encabezado h1 */
+h1 {
+  font-size: 3.2rem; /* Tamaño de fuente del encabezado */
+  width: 80%; /* Ancho del encabezado */
+  max-width: 350px; /* Ancho máximo del encabezado */
+  margin-left: 4%; /* Margen izquierdo del encabezado */
+  font-family: 'Courier New', Courier, monospace; /* Fuente del encabezado */
+}
+
+/* Estilos para el párrafo p */
+p {
+  width: 80%; /* Ancho del párrafo */
+  max-width: 550px; /* Ancho máximo del párrafo */
+  margin-left: 4%; /* Margen izquierdo del párrafo */
+  font-family: 'Courier New', Courier, monospace; /* Fuente del párrafo */
+}
+
+/* Estilos para el número de usuario .userNumber */
+.userNumber {
+  width: 80%; /* Ancho del número de usuario */
+  height: 5%; /* Alto del número de usuario */
+  max-height: 100px; /* Altura máxima del número de usuario */
+  max-width: 250px; /* Ancho máximo del número de usuario */
+  margin-left: 4%; /* Margen izquierdo del número de usuario */
+  text-align: center; /* Alineación del texto al centro */
+  border-radius: 20px; /* Borde redondeado del número de usuario */
+  font-size: large; /* Tamaño de fuente del número de usuario */
+  font-family: 'Anton'; /* Fuente del número de usuario */
+}
+
+/* Estilos para los botones .button */
+.container_button {
+  width: 80%; /* Ancho del botón */
+  height: 5%; /* Alto del botón */
+  max-height: 100px; /* Altura máxima del botón */
+  max-width: 250px; /* Ancho máximo del botón */
+  margin-top: 1%; /* Margen superior del botón */
+  margin-left: 3%; /* Margen izquierdo del botón */
+  display: flex; /* Mostrar como flexbox para espaciado entre elementos */
+  justify-content: space-between; /* Espaciado uniforme entre elementos */
+}
+
+/* Estilos para el botón #attempt */
+#attempt {
+  border-radius: 10px; /* Borde redondeado del botón */
+  font-size: 1.4rem; /* Tamaño de fuente del botón */
+  margin-left: 7%; /* Margen izquierdo del botón */
+  border-color: #cccccc00; /* Color del borde del botón */
+  background-color: rgba(208, 233, 47, 0.827); /* Color de fondo del botón */
+}
+
+/* Estilos para el botón #restart */
+#restart {
+  font-size: 20px; /* Tamaño de fuente del botón */
+  border-radius: 10px; /* Borde redondeado del botón */
+  border-color: #cccccc00; /* Color del borde del botón */
+  background-color: rgba(208, 233, 47, 0.827); /* Color de fondo del botón */
+}
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 600px) {
   #centered-box {
-    max-width: 1000px;
-    min-width: 400px;
-    width: 80%; /* Ancho de la caja, dejando un margen del 5% a los lados */
-    height: 80%;
-    padding: 20px;
-    background-image: url(img/Ruido.png);
-    background-size: 100%;
-    border: 1px solid #ccc;
-    border-radius: 22px;
-    margin: 5% auto; /* Márgenes del 5% desde arriba y abajo */
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Cambia la orientación a vertical en dispositivos móviles */
+    align-items: center; /* Centra horizontalmente los elementos en móviles */
+    justify-content: center; /* Centra verticalmente los elementos en móviles */
   }
-  .imagen{
-    max-width: 600px;
-    width: 50%;
+  
+  .imagen {
+    margin-top: 20px; /* Añade un margen superior para separar de otros elementos en móviles */
   }
-  h1{
-    font-size: 70px;
-    width: 80%;
-    max-width: 350px;
-    max-height: 200px;
-    margin-left: 4%;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  p{
-    width: 80%;
-    max-width: 550px;
-    margin-left: 4%;
-    max-height: 20px;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  .userNumber{
-    width: 80%;
-    height: 5%;
-    max-height: 100px;
-    max-width: 260px;
-    margin-top: 5px;
-    margin-left: 4%;
-    text-align: center;
-    border-radius: 20px;
-    font-size: large;
-    font-family: 'Courier New';
-  }
-  .button {
-    width: 80%;
-    height: 5%;
-    max-height: 100px;
-    max-width: 250px;
-    margin-top: 1%;
-    margin-left: 3%;
-    display: flex;
-    justify-content: space-between;
-  }
-  #attempt {
-    border-radius:10px;
-    font-size: 20px;
-    margin-left: 7%;
-    border-color: #cccccc00;
-    background-color: rgba(208, 233, 47, 0.827);
-  }
-  #restart {
-    font-size: 20px;
-    border-radius: 10px;
-    border-color: #cccccc00;
-    background-color: rgba(208, 233, 47, 0.827);
-  }
+}
