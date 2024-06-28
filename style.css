@@ -1,0 +1,79 @@
+/* Estilo para el body */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(202, 226, 95); /* Fondo azul para todo el body */
+    font-family: Arial, sans-serif;
+  }
+  #centered-box {
+    max-width: 1000px;
+    min-width: 400px;
+    width: 80%; /* Ancho de la caja, dejando un margen del 5% a los lados */
+    height: 80%;
+    padding: 20px;
+    background-image: url(img/Ruido.png);
+    background-size: 100%;
+    border: 1px solid #ccc;
+    border-radius: 22px;
+    margin: 5% auto; /* Márgenes del 5% desde arriba y abajo */
+    display: flex;
+    justify-content: space-between;
+  }
+  .imagen{
+    max-width: 600px;
+    width: 50%;
+  }
+  h1{
+    font-size: 70px;
+    width: 80%;
+    max-width: 350px;
+    max-height: 200px;
+    margin-left: 4%;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  p{
+    width: 80%;
+    max-width: 550px;
+    margin-left: 4%;
+    max-height: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .userNumber{
+    width: 80%;
+    height: 5%;
+    max-height: 100px;
+    max-width: 260px;
+    margin-top: 5px;
+    margin-left: 4%;
+    text-align: center;
+    border-radius: 20px;
+    font-size: large;
+    font-family: 'Courier New';
+  }
+  .button {
+    width: 80%;
+    height: 5%;
+    max-height: 100px;
+    max-width: 250px;
+    margin-top: 1%;
+    margin-left: 3%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #attempt {
+    border-radius:10px;
+    font-size: 20px;
+    margin-left: 7%;
+    border-color: #cccccc00;
+    background-color: rgba(208, 233, 47, 0.827);
+  }
+  #restart {
+    font-size: 20px;
+    border-radius: 10px;
+    border-color: #cccccc00;
+    background-color: rgba(208, 233, 47, 0.827);
+  }
