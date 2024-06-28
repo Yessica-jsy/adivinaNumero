@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contenido Centrado en un Cuadrado Rojo</title>
 <link rel="stylesheet" href="style.css"> <!-- Archivo CSS externo -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,11 +18,19 @@
     <input type="number" id="userNumber" class="userNumber" disabled>
     <form action=""></form>
     <br>
-    <div class="button">
-      <input onclick="verifyNumber()" type="button" value="Attempt" id="attempt" disabled>
-      <input type="button" value="Restart" id="restart" disabled> 
+    <div class="container_button">
+      <input onclick="verifyNumber()" type="button" value="Attempt" class="buttons" id="attempt" disabled>
+      <input type="button" value="Restart" id="restart" class="buttons" disabled> 
     </div>
   </div>
+  
+  <img src="img/what.png" alt="que?" id='picture' class="imagen">
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
 
   <img src="img/what.png" alt="que?" id='picture' class="imagen">
 
