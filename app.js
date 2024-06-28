@@ -46,7 +46,7 @@ function verifyNumber() {
             assignText('p', 'Alcanzaste el número máximo de intentos');
             document.getElementById('restart').removeAttribute('disabled'); // Habilita el botón de reinicio
             noAttmepts()
-            img('img/angry.png');
+            img('img/cry.png');
         }
         return;
     }
